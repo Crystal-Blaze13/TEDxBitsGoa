@@ -220,9 +220,9 @@ export default function SpeakersPage() {
           <div className="mt-16 text-center">
             <div className="inline-block bg-gray-900/50 border border-gray-800 rounded-2xl p-8 max-w-2xl">
               <p className="text-gray-400 leading-relaxed">
-                Want to relive the magic? Watch past TEDxBITSGoa talks on our{' '}
-                <a href="https://youtube.com/@tedxbitsgoa" target="_blank" rel="noopener noreferrer" className="text-red-500 hover:text-red-400 font-semibold underline">
-                  YouTube channel
+                Want to relive the magic? Watch TED talks on the{' '}
+                <a href="https://www.youtube.com/TED" target="_blank" rel="noopener noreferrer" className="text-red-500 hover:text-red-400 font-semibold underline">
+                  official TED YouTube channel
                 </a>
               </p>
             </div>

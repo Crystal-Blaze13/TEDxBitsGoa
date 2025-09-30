@@ -130,9 +130,9 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 
 - **Email:** contact@tedxbitsgoa.com
 - **Instagram:** [@tedxbitsgoa](https://instagram.com/tedxbitsgoa)
-- **LinkedIn:** [TEDxBITSGoa](https://linkedin.com/company/tedxbitsgoa)
+- **LinkedIn:** [TEDxBITSGoa](https://www.linkedin.com/company/tedx-bitsgoa/)
 - **Twitter:** [@tedxbitsgoa](https://x.com/tedxbitsgoa)
-- **YouTube:** [@tedxbitsgoa](https://youtube.com/@tedxbitsgoa)
+- **YouTube:** [Official TED Channel](https://www.youtube.com/TED)
 
 ## Acknowledgments
 

@@ -34,64 +34,64 @@ export default function TeamPage() {
       image: 'https://i.pravatar.cc/300?img=27',
       title: 'Palak Kshetrapal',
       subtitle: 'Sponsorship Head',
-      borderColor: '#F59E0B',
-      gradient: 'linear-gradient(145deg, #F59E0B, #000)',
+      borderColor: '#E62B1E',
+      gradient: 'linear-gradient(145deg, #E62B1E, #000)',
       url: '#'
     },
     {
       image: 'https://i.pravatar.cc/300?img=33',
       title: 'Neev Sharma',
       subtitle: 'Sponsorship Head',
-      borderColor: '#F59E0B',
-      gradient: 'linear-gradient(165deg, #F59E0B, #000)',
+      borderColor: '#DC2626',
+      gradient: 'linear-gradient(165deg, #DC2626, #000)',
       url: '#'
     },
     {
       image: 'https://i.pravatar.cc/300?img=15',
       title: 'Aditya Kothari',
       subtitle: 'Publicity Head',
-      borderColor: '#8B5CF6',
-      gradient: 'linear-gradient(185deg, #8B5CF6, #000)',
+      borderColor: '#B91C1C',
+      gradient: 'linear-gradient(185deg, #B91C1C, #000)',
       url: '#'
     },
     {
       image: 'https://i.pravatar.cc/300?img=52',
       title: 'Adarsh Nair',
       subtitle: 'Publicity Head',
-      borderColor: '#8B5CF6',
-      gradient: 'linear-gradient(205deg, #8B5CF6, #000)',
+      borderColor: '#991B1B',
+      gradient: 'linear-gradient(205deg, #991B1B, #000)',
       url: '#'
     },
     {
       image: 'https://i.pravatar.cc/300?img=68',
       title: 'Nipun Saxena',
       subtitle: 'Design Head',
-      borderColor: '#06B6D4',
-      gradient: 'linear-gradient(225deg, #06B6D4, #000)',
+      borderColor: '#7F1D1D',
+      gradient: 'linear-gradient(225deg, #7F1D1D, #000)',
       url: '#'
     },
     {
       image: 'https://i.pravatar.cc/300?img=59',
       title: 'Vidit Bhansali',
       subtitle: 'Design Head',
-      borderColor: '#06B6D4',
-      gradient: 'linear-gradient(245deg, #06B6D4, #000)',
+      borderColor: '#EF4444',
+      gradient: 'linear-gradient(245deg, #EF4444, #000)',
       url: '#'
     },
     {
       image: 'https://i.pravatar.cc/300?img=31',
       title: 'Aarsh Bhavsar',
       subtitle: 'Content Head',
-      borderColor: '#10B981',
-      gradient: 'linear-gradient(265deg, #10B981, #000)',
+      borderColor: '#F87171',
+      gradient: 'linear-gradient(265deg, #F87171, #000)',
       url: '#'
     },
     {
       image: 'https://i.pravatar.cc/300?img=14',
       title: 'Varun Jayakumar',
       subtitle: 'Content Head',
-      borderColor: '#10B981',
-      gradient: 'linear-gradient(285deg, #10B981, #000)',
+      borderColor: '#DC2626',
+      gradient: 'linear-gradient(285deg, #DC2626, #000)',
       url: '#'
     }
   ];
@@ -157,16 +157,31 @@ export default function TeamPage() {
       </section>
 
       {/* Vertical Heads Section */}
-      <section className="py-16 px-4">
-        <div className="max-w-7xl mx-auto">
-          <h2 className="text-4xl md:text-5xl font-black text-center mb-4">
-            Vertical <span className="text-red-600">Heads</span>
-          </h2>
-          <p className="text-center text-gray-400 mb-12 text-lg">
-            Driving excellence across all domains
-          </p>
-          <div className="min-h-[800px]">
-            <ChromaGrid items={verticalHeads} radius={400} damping={0.45} />
+      <section className="py-8 px-4 bg-gradient-to-b from-black to-gray-900">
+        <div className="max-w-5xl mx-auto">
+          <div className="text-center mb-8">
+            <h2 className="text-3xl font-black mb-2">
+              Vertical <span className="text-red-600">Heads</span>
+            </h2>
+            <div className="relative inline-block">
+              <p className="text-sm text-gray-400 font-medium max-w-2xl mx-auto relative z-10 px-4">
+                Driving excellence across all domains
+              </p>
+            </div>
+          </div>
+          <div className="grid grid-rows-2 gap-y-6">
+            <ChromaGrid 
+              items={verticalHeads.slice(0, 4)} 
+              radius={250}
+              damping={0.2}
+              className="gap-4"
+            />
+            <ChromaGrid 
+              items={verticalHeads.slice(4)} 
+              radius={250}
+              damping={0.2}
+              className="gap-4"
+            />
           </div>
         </div>
       </section>

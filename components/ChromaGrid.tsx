@@ -144,7 +144,7 @@ const ChromaGrid = ({ items, className = '', radius = 300, damping = 0.45, fadeO
       ref={rootRef}
       onPointerMove={handleMove}
       onPointerLeave={handleLeave}
-      className={`relative w-full h-full flex flex-wrap justify-center items-start gap-3 ${className}`}
+      className={`relative w-full h-full grid grid-cols-4 gap-3 md:gap-4 place-items-center ${className}`}
       style={{
         '--r': `${radius}px`,
         '--x': '50%',
@@ -156,7 +156,7 @@ const ChromaGrid = ({ items, className = '', radius = 300, damping = 0.45, fadeO
           key={i}
           onMouseMove={handleCardMove}
           onClick={() => handleCardClick(c.url)}
-          className="group relative flex flex-col w-[240px] rounded-[20px] overflow-hidden border-2 border-transparent transition-colors duration-300 cursor-pointer"
+          className="group relative flex flex-col w-full h-full max-h-[260px] rounded-xl overflow-hidden border border-transparent transition-all duration-300 cursor-pointer hover:scale-[1.02] hover:shadow-md hover:shadow-red-600/5"
           style={{
             '--card-border': c.borderColor || 'transparent',
             background: c.gradient,
@@ -170,14 +170,20 @@ const ChromaGrid = ({ items, className = '', radius = 300, damping = 0.45, fadeO
                 'radial-gradient(circle at var(--mouse-x) var(--mouse-y), var(--spotlight-color), transparent 70%)'
             }}
           />
-          <div className="relative z-10 flex-1 p-[10px] box-border">
-            <img src={c.image} alt={c.title} loading="lazy" className="w-full h-full object-cover rounded-[10px]" />
+          <div className="relative z-10 flex-1 p-2 box-border h-40">
+            <div className="w-full h-full rounded-lg overflow-hidden bg-gray-900/20">
+              <img 
+                src={c.image} 
+                alt={c.title} 
+                loading="lazy" 
+                className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" 
+              />
+            </div>
           </div>
-          <footer className="relative z-10 p-3 text-white font-sans grid grid-cols-[1fr_auto] gap-x-3 gap-y-1">
-            <h3 className="m-0 text-[1.05rem] font-semibold">{c.title}</h3>
-            {c.handle && <span className="text-[0.95rem] opacity-80 text-right">{c.handle}</span>}
-            <p className="m-0 text-[0.85rem] opacity-85">{c.subtitle}</p>
-            {c.location && <span className="text-[0.85rem] opacity-85 text-right">{c.location}</span>}
+          <footer className="relative z-10 p-3 pt-0 text-white font-sans">
+            <h3 className="m-0 text-sm font-bold mb-0.5 leading-tight line-clamp-2 h-9">{c.title}</h3>
+            <p className="m-0 text-[11px] uppercase tracking-widest text-red-400 font-semibold mt-1">{c.subtitle}</p>
+            <div className="absolute inset-0 border border-transparent group-hover:border-red-500/30 rounded-xl pointer-events-none transition-all duration-200" />
           </footer>
         </article>
       ))}

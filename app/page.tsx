@@ -88,9 +88,17 @@ export default function Home() {
       {/* About Section */}
       <section id="about" className="py-24 px-4 bg-gradient-to-b from-black to-gray-900">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-5xl font-black text-center mb-16">
-            About <span className="text-red-600">TEDx</span>BITSGoa
-          </h2>
+          <div className="text-center mb-16">
+            <h2 className="text-5xl md:text-6xl font-black mb-6">
+              About <span className="text-red-600">TEDx</span>BITSGoa
+            </h2>
+            <div className="relative inline-block">
+              <p className="text-xl md:text-2xl text-gray-300 font-medium max-w-3xl mx-auto relative z-10 px-4">
+                India's oldest running institutional TEDx conference
+              </p>
+              <div className="absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-red-600 to-transparent opacity-70"></div>
+            </div>
+          </div>
           
           <div className="grid md:grid-cols-2 gap-12 items-start">
             {/* Left Column - About TEDx */}
@@ -294,7 +302,7 @@ export default function Home() {
             
             {/* LinkedIn */}
             <a 
-              href="https://linkedin.com/company/tedxbitsgoa" 
+              href="https://www.linkedin.com/company/tedx-bitsgoa/" 
               target="_blank" 
               rel="noopener noreferrer"
               className="group bg-gradient-to-br from-blue-600 to-blue-800 p-6 rounded-2xl hover:scale-110 transition-all duration-300 shadow-lg hover:shadow-blue-600/50"
@@ -318,7 +326,7 @@ export default function Home() {
             
             {/* YouTube */}
             <a 
-              href="https://youtube.com/@tedxbitsgoa" 
+              href="https://www.youtube.com/TED" 
               target="_blank" 
               rel="noopener noreferrer"
               className="group bg-gradient-to-br from-red-600 to-red-800 p-6 rounded-2xl hover:scale-110 transition-all duration-300 shadow-lg hover:shadow-red-600/50"
