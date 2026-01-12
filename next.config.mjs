@@ -1,9 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  eslint: {
-    // ❗ This makes ESLint *not block* production builds
-    ignoreDuringBuilds: true,
-  },
+  // put any *other* config here if you have it
 };
 
 export default nextConfig;
