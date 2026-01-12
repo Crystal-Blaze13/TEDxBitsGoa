@@ -1,6 +1,6 @@
-import Image from 'next/image';
+'use client';
+
 import Link from 'next/link';
-import GradientText from '../components/GradientText';
 
 export default function Home() {
   return (
@@ -71,7 +71,7 @@ export default function Home() {
               
               <div className="bg-black/40 p-4 rounded-lg border-l-4 border-red-600 my-4">
                 <p className="italic text-base md:text-lg text-gray-300">
-                  &quot;Inspiration can come in such small ways that if you sit there just waiting for the big epiphany, you&apos;ll sit there for the rest of your life.&quot;
+                  "Inspiration can come in such small ways that if you sit there just waiting for the big epiphany, you'll sit there for the rest of your life."
                 </p>
                 <p className="text-right text-red-400 mt-2 text-sm font-semibold">— Irvine Welsh</p>
               </div>
@@ -105,7 +105,7 @@ export default function Home() {
               <div className="bg-gray-800/50 p-8 rounded-2xl shadow-2xl border border-gray-700">
                 <h3 className="text-2xl font-bold mb-4 text-red-500">What is TEDx?</h3>
                 <p className="text-gray-300 leading-relaxed mb-4">
-                  In the spirit of &quot;ideas worth spreading&quot;, TED has created a program called TEDx. TEDx is a program of local, self-organized events that bring people together to share a TED-like experience. Our event is called TEDxBITSGoa, where x = independently organized TED event.
+                  In the spirit of "ideas worth spreading", TED has created a program called TEDx. TEDx is a program of local, self-organized events that bring people together to share a TED-like experience. Our event is called TEDxBITSGoa, where x = independently organized TED event.
                 </p>
                 <p className="text-gray-300 leading-relaxed mb-4">
                   At our TEDxBITSGoa event, TED Talks video and live speakers will combine to spark deep discussion and connection in a small group. The TED Conference provides general guidance for the TEDx program, but individual TEDx events, including ours, are self-organized.
@@ -147,7 +147,7 @@ export default function Home() {
                     <div className="text-3xl mr-4">🎯</div>
                     <div>
                       <p className="font-bold text-lg">Theme</p>
-                      <p className="text-red-100 text-xl font-semibold">&quot;Unveiling Epiphany&quot;</p>
+                      <p className="text-red-100 text-xl font-semibold">"Unveiling Epiphany"</p>
                       <p className="text-sm text-red-100 mt-1">Celebrating the journey of discovery</p>
                     </div>
                   </div>
