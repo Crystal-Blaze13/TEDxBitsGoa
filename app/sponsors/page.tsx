@@ -6,88 +6,79 @@ import { useRef, useState } from 'react';
 export default function SponsorsPage() {
   const sponsors = [
     {
-      name: 'Tech Innovations Inc',
-      tier: 'Title Sponsor',
-      logo: 'https://via.placeholder.com/200x80/E62B1E/FFFFFF?text=Tech+Innovations',
-      description: 'Leading the future of technology',
+      name: 'Red Bull',
+      logo: '/images/sponsors/redbull.png',
       gradient: 'from-red-600 to-red-800'
     },
     {
-      name: 'Global Finance Corp',
-      tier: 'Platinum Sponsor',
-      logo: 'https://via.placeholder.com/200x80/DC2626/FFFFFF?text=Global+Finance',
-      description: 'Empowering financial freedom',
+      name: 'Hyundai',
+      logo: '/images/sponsors/hyundai.png',
       gradient: 'from-red-700 to-gray-900'
     },
     {
-      name: 'EduTech Solutions',
-      tier: 'Platinum Sponsor',
-      logo: 'https://via.placeholder.com/200x80/B91C1C/FFFFFF?text=EduTech',
-      description: 'Transforming education worldwide',
+      name: 'Nexus Malls',
+      logo: '/images/sponsors/nexusmalls.png',
       gradient: 'from-red-800 to-black'
     },
     {
-      name: 'Green Energy Ltd',
-      tier: 'Gold Sponsor',
-      logo: 'https://via.placeholder.com/200x80/991B1B/FFFFFF?text=Green+Energy',
-      description: 'Sustainable energy solutions',
+      name: 'SBI',
+      logo: '/images/sponsors/sbi.png',
       gradient: 'from-gray-900 to-red-900'
     },
     {
-      name: 'HealthCare Plus',
-      tier: 'Gold Sponsor',
-      logo: 'https://via.placeholder.com/200x80/7F1D1D/FFFFFF?text=HealthCare+Plus',
-      description: 'Healthcare for everyone',
+      name: 'Beardo',
+      logo: '/images/sponsors/beardo.png',
       gradient: 'from-black to-red-800'
     },
     {
-      name: 'AI Dynamics',
-      tier: 'Gold Sponsor',
-      logo: 'https://via.placeholder.com/200x80/991B1B/FFFFFF?text=AI+Dynamics',
-      description: 'Artificial intelligence pioneers',
+      name: 'Snackible',
+      logo: '/images/sponsors/snackible.png',
       gradient: 'from-red-900 to-gray-800'
     },
     {
-      name: 'Cloud Systems',
-      tier: 'Silver Sponsor',
-      logo: 'https://via.placeholder.com/200x80/7F1D1D/FFFFFF?text=Cloud+Systems',
-      description: 'Cloud computing excellence',
+      name: 'Double Horse',
+      logo: '/images/sponsors/doublehorse.png',
       gradient: 'from-gray-800 to-black'
     },
     {
-      name: 'Digital Marketing Pro',
-      tier: 'Silver Sponsor',
-      logo: 'https://via.placeholder.com/200x80/991B1B/FFFFFF?text=Digital+Marketing',
-      description: 'Marketing in the digital age',
+      name: 'SAIL',
+      logo: '/images/sponsors/sail.png',
       gradient: 'from-red-800 to-gray-900'
     },
     {
-      name: 'Smart Logistics',
-      tier: 'Silver Sponsor',
-      logo: 'https://via.placeholder.com/200x80/7F1D1D/FFFFFF?text=Smart+Logistics',
-      description: 'Efficient supply chain solutions',
+      name: 'LIC',
+      logo: '/images/sponsors/lic.png',
       gradient: 'from-black to-red-700'
     },
     {
-      name: 'Creative Studios',
-      tier: 'Bronze Sponsor',
-      logo: 'https://via.placeholder.com/200x80/991B1B/FFFFFF?text=Creative+Studios',
-      description: 'Design and creativity',
+      name: 'Mirchi (It\'s Hot!)',
+      logo: '/images/sponsors/mirchi.png',
       gradient: 'from-gray-900 to-red-800'
     },
     {
-      name: 'Food & Beverage Co',
-      tier: 'Bronze Sponsor',
-      logo: 'https://via.placeholder.com/200x80/7F1D1D/FFFFFF?text=Food+%26+Beverage',
-      description: 'Quality food products',
+      name: 'Indian Oil',
+      logo: '/images/sponsors/indianoil.png',
       gradient: 'from-red-900 to-black'
     },
     {
-      name: 'Travel Adventures',
-      tier: 'Bronze Sponsor',
-      logo: 'https://via.placeholder.com/200x80/991B1B/FFFFFF?text=Travel+Adventures',
-      description: 'Explore the world with us',
+      name: 'BORÉCHA',
+      logo: '/images/sponsors/borecha.png',
       gradient: 'from-black to-gray-900'
+    },
+    {
+      name: 'EaseMyTrip',
+      logo: '/images/sponsors/easemytrip.png',
+      gradient: 'from-gray-900 to-red-800'
+    },
+    {
+      name: 'Ola',
+      logo: '/images/sponsors/ola.png',
+      gradient: 'from-red-800 to-gray-900'
+    },
+    {
+      name: 'Zoho',
+      logo: '/images/sponsors/zoho.png',
+      gradient: 'from-black to-red-700'
     }
   ];
 
@@ -125,17 +116,12 @@ export default function SponsorsPage() {
         <div className={`absolute inset-0 bg-gradient-to-br ${sponsor.gradient} opacity-0 group-hover:opacity-20 transition-opacity duration-500`} />
 
         <div className="relative p-8 flex flex-col items-center text-center h-full">
-          {/* Tier Badge */}
-          <div className="mb-6 px-4 py-2 bg-red-600/20 border border-red-600/50 rounded-full">
-            <span className="text-red-400 text-sm font-bold uppercase tracking-wider">{sponsor.tier}</span>
-          </div>
-
           {/* Logo */}
           <div className="mb-6 w-full h-20 flex items-center justify-center bg-white/5 rounded-xl p-4 backdrop-blur-sm">
             <img
               src={sponsor.logo}
               alt={sponsor.name}
-              className="max-w-full max-h-full object-contain filter brightness-0 invert opacity-80 group-hover:opacity-100 transition-opacity"
+              className="max-w-full max-h-full object-contain opacity-80 group-hover:opacity-100 transition-opacity"
             />
           </div>
 
@@ -143,11 +129,6 @@ export default function SponsorsPage() {
           <h3 className="text-2xl font-black mb-3 text-white group-hover:text-red-400 transition-colors">
             {sponsor.name}
           </h3>
-
-          {/* Description */}
-          <p className="text-gray-400 text-sm leading-relaxed mb-6 flex-grow">
-            {sponsor.description}
-          </p>
 
           {/* Decorative line */}
           <div className="w-16 h-1 bg-gradient-to-r from-transparent via-red-600 to-transparent opacity-50 group-hover:opacity-100 transition-opacity" />
@@ -179,9 +160,6 @@ export default function SponsorsPage() {
               </Link>
               <Link href="/#speakers" className="text-sm font-semibold hover:text-red-500 transition-colors duration-300">
                 SPEAKERS
-              </Link>
-              <Link href="/team" className="text-sm font-semibold hover:text-red-500 transition-colors duration-300">
-                TEAM
               </Link>
               <Link href="/sponsors" className="text-sm font-semibold text-red-500 transition-colors duration-300">
                 SPONSORS
@@ -258,20 +236,8 @@ export default function SponsorsPage() {
             </p>
 
             <div className="flex flex-wrap justify-center gap-6 text-sm text-gray-400">
-              <Link href="/#home" className="hover:text-red-500 transition-colors">
-                Home
-              </Link>
-              <span>•</span>
-              <Link href="/#about" className="hover:text-red-500 transition-colors">
-                About
-              </Link>
-              <span>•</span>
-              <Link href="/#speakers" className="hover:text-red-500 transition-colors">
+              <Link href="/speakers" className="hover:text-red-500 transition-colors">
                 Speakers
-              </Link>
-              <span>•</span>
-              <Link href="/team" className="hover:text-red-500 transition-colors">
-                Team
               </Link>
               <span>•</span>
               <Link href="/sponsors" className="hover:text-red-500 transition-colors">

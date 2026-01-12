@@ -9,6 +9,7 @@ export default function SpeakersPage() {
       title: 'Miss Grand International 2024',
       nickname: 'The Radiance',
       icon: '👑',
+      image: '/images/speakers/rachel-gupta.png',
       description: 'First Indian to win Miss Grand International. From small-town dreamer to global icon with 1.5M followers, inspiring millions worldwide.',
       gradient: 'from-red-900 to-gray-800'
     },
@@ -17,7 +18,8 @@ export default function SpeakersPage() {
       title: "India's First Woman Grandmaster",
       nickname: 'The MasterMind',
       icon: '♟️',
-      description: '6 National Championships, Arjuna Award winner, and two Olympiad Silver Medals. A living legend inspiring the chess world.',
+      image: '/images/speakers/vijayalakshmi-subbaraman.png',
+      description: '6 National Championships, Arjuna Award winner, and two Olympiad Silver Medals. A living legend inspiring by chess world.',
       gradient: 'from-gray-700 to-black'
     },
     {
@@ -25,6 +27,7 @@ export default function SpeakersPage() {
       title: 'Founder, Tathastu IAS',
       nickname: 'The Mentor',
       icon: '📚',
+      image: '/images/speakers/tanu-jain.png',
       description: 'Former civil servant, dental surgeon, and DRDO Assistant Director. Leading UPSC mentor helping thousands achieve their dreams.',
       gradient: 'from-red-800 to-gray-900'
     },
@@ -33,6 +36,7 @@ export default function SpeakersPage() {
       title: 'AI & Robotics Innovator',
       nickname: 'The Futurist',
       icon: '🤖',
+      image: '/images/speakers/athil-krishna.png',
       description: 'From rural Kerala to global AI pioneer. Founder of iHub Robotics revolutionizing robotics, education, and aerospace with Robot TARA.',
       gradient: 'from-gray-800 to-red-900'
     },
@@ -41,61 +45,93 @@ export default function SpeakersPage() {
       title: 'Former Commissioner of Police, Delhi',
       nickname: 'The Exemplary',
       icon: '⚖️',
+      image: '/images/speakers/rakesh-asthana.png',
       description: '40 years of exemplary service. DG of BSF, Special Director CBI. Investigated Fodder Scam and 2008 Ahmedabad bombings.',
       gradient: 'from-red-900 to-black'
     }
   ];
 
-  const pastSpeakers = [
-    {
-      name: 'Dr. Arvind Kumar',
-      title: 'Neuroscientist',
-      year: '2024',
-      icon: '🧠',
-      description: 'Groundbreaking research in cognitive neuroscience and brain-computer interfaces.',
-      gradient: 'from-gray-800 to-gray-900'
-    },
-    {
-      name: 'Priya Malhotra',
-      title: 'Social Entrepreneur',
-      year: '2024',
-      icon: '🌱',
-      description: 'Founded NGO empowering rural women through sustainable livelihood programs.',
-      gradient: 'from-gray-700 to-black'
-    },
-    {
-      name: 'Kabir Sharma',
-      title: 'Tech Innovator',
-      year: '2023',
-      icon: '💡',
-      description: 'Created affordable EdTech solutions reaching 10 million students across India.',
-      gradient: 'from-black to-gray-800'
-    },
-    {
-      name: 'Dr. Meera Nair',
-      title: 'Climate Scientist',
-      year: '2023',
-      icon: '🌍',
-      description: 'Leading research on climate change adaptation strategies for coastal communities.',
-      gradient: 'from-gray-900 to-black'
-    },
-    {
-      name: 'Rohan Desai',
-      title: 'Film Director',
-      year: '2023',
-      icon: '🎬',
-      description: 'Award-winning documentaries highlighting untold stories of Indian heritage.',
-      gradient: 'from-gray-800 to-black'
-    },
-    {
-      name: 'Ananya Iyer',
-      title: 'Sports Psychologist',
-      year: '2022',
-      icon: '🏆',
-      description: 'Mental conditioning coach for Olympic athletes and national teams.',
-      gradient: 'from-black to-gray-900'
-    }
-  ];
+  const pastSpeakersByYear = {
+    '2024': [
+      'Ashok Kumar Er',
+      'Mukesh Chhabra', 
+      'Nandini Srikar',
+      'Striver',
+      'Vivek Atray'
+    ],
+    '2023': [
+      'Gamerfleet',
+      'Amit Sial',
+      'Anshul Rustaggi',
+      'Rajeev Mehajan',
+      'Avani Awasthee'
+    ],
+    '2022': [
+      'Ria Wahi',
+      'Shamon Tainer Hanna',
+      'Akshay Chopra',
+      'Chandrachur Ghose',
+      'Hormazd Sorabjee',
+      'Avanti Nagral'
+    ],
+    '2021': [
+      'Neelesh Hundekari',
+      'Aditya Seal',
+      'Dr. Vinay Singh',
+      'Sandeep Jain',
+      'Abhiir Bhalla',
+      'Major General Vikram Dev Dogra',
+      'Prof. George Elerick'
+    ],
+    '2020': [
+      'Jimmy Mistry',
+      'Priya Mishra',
+      'Viraj Ghelani',
+      'Elli Avrram',
+      'Sudhir R',
+      'Rajan Singh',
+      'Archis Patil',
+      'Anand Bhaskar',
+      'Padmashri Sarvanan',
+      'Anil Lamba'
+    ],
+    '2019': [
+      'Kriti Kulhari',
+      'Dr. Jagdish Chaturvedi',
+      'Prateep Basu',
+      'Karishma Boolani',
+      'Vilas Nayak',
+      'Gayatri Parameswaran',
+      'Hormis Tharakan',
+      'Franz Gastler',
+      'Elena Fernandez'
+    ],
+    '2018': [
+      'Jay Weinstein',
+      'Ami Shroff',
+      'Ritesh Malik'
+    ],
+    '2017': [
+      'Suvrat Raju',
+      'Piyush Mishra',
+      'Ulaike Reinhard',
+      'Sumeet Vyas',
+      'Malaika Vaz',
+      'Sarah Todd'
+    ],
+    '2016': [
+      'Kavita Seth',
+      'Sudip Dutta',
+      'Kamlesh Patel',
+      'A. R. K. Pillai',
+      'Benny Prasad',
+      'Kiran Bedi',
+      'Gen. Vijay Oberoi',
+      'Ritu Dalmia',
+      'Tushar Lall',
+      'Swayam Lalwani'
+    ]
+  };
 
   return (
     <main className="min-h-screen bg-black text-white">
@@ -117,9 +153,6 @@ export default function SpeakersPage() {
               </Link>
               <Link href="/speakers" className="text-sm font-semibold text-red-500 transition-colors duration-300">
                 SPEAKERS
-              </Link>
-              <Link href="/team" className="text-sm font-semibold hover:text-red-500 transition-colors duration-300">
-                TEAM
               </Link>
               <Link href="/sponsors" className="text-sm font-semibold hover:text-red-500 transition-colors duration-300">
                 SPONSORS
@@ -164,7 +197,15 @@ export default function SpeakersPage() {
                 style={{ animation: `fadeInUp 0.6s ease-out ${index * 0.1}s both` }}
               >
                 <div className={`relative h-80 bg-gradient-to-br ${speaker.gradient} overflow-hidden`}>
-                  <div className="absolute inset-0 flex items-center justify-center text-7xl">{speaker.icon}</div>
+                  {speaker.image ? (
+                    <img 
+                      src={speaker.image} 
+                      alt={speaker.name}
+                      className="w-full h-full object-cover"
+                    />
+                  ) : (
+                    <div className="absolute inset-0 flex items-center justify-center text-7xl">{speaker.icon}</div>
+                  )}
                   <div className="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent"></div>
                   <div className="absolute top-4 right-4 bg-red-600 text-white text-xs font-bold px-3 py-1 rounded-full">
                     {speaker.nickname}
@@ -189,28 +230,28 @@ export default function SpeakersPage() {
               Past <span className="text-red-600">Speakers</span>
             </h2>
             <p className="text-gray-400 text-lg max-w-2xl mx-auto">
-              Celebrating the incredible voices who have graced our stage and inspired our community
+              Celebrating incredible voices who have graced our stage and inspired our community
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {pastSpeakers.map((speaker, index) => (
-              <div
-                key={index}
-                className="group bg-gradient-to-br from-gray-900 to-black rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl hover:shadow-red-600/10 transition-all duration-300 hover:scale-105 border border-gray-800/50"
-                style={{ animation: `fadeInUp 0.6s ease-out ${index * 0.1}s both` }}
-              >
-                <div className={`relative h-64 bg-gradient-to-br ${speaker.gradient} overflow-hidden`}>
-                  <div className="absolute inset-0 flex items-center justify-center text-6xl opacity-70">{speaker.icon}</div>
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent"></div>
-                  <div className="absolute top-4 left-4 bg-gray-800/80 text-gray-300 text-xs font-bold px-3 py-1 rounded-full">
-                    {speaker.year}
-                  </div>
-                </div>
-                <div className="p-6">
-                  <h3 className="text-xl font-bold mb-2 group-hover:text-red-400 transition-colors">{speaker.name}</h3>
-                  <p className="text-gray-400 font-semibold mb-3 text-sm">{speaker.title}</p>
-                  <p className="text-gray-500 text-sm leading-relaxed">{speaker.description}</p>
+          <div className="space-y-12">
+            {Object.entries(pastSpeakersByYear).reverse().map(([year, speakers]) => (
+              <div key={year} className="text-center">
+                <h3 className="text-3xl md:text-4xl font-black mb-6 text-red-600">
+                  {year}
+                </h3>
+                <div className="flex flex-wrap justify-center gap-4 md:gap-6">
+                  {speakers.map((speaker, index) => (
+                    <div
+                      key={index}
+                      className="bg-gray-900/50 border border-gray-800 rounded-full px-6 py-3 hover:bg-red-600/10 hover:border-red-600/50 transition-all duration-300 hover:scale-105"
+                      style={{ animation: `fadeInUp 0.6s ease-out ${index * 0.05}s both` }}
+                    >
+                      <span className="text-white font-medium text-sm md:text-base">
+                        {speaker}
+                      </span>
+                    </div>
+                  ))}
                 </div>
               </div>
             ))}
@@ -245,20 +286,8 @@ export default function SpeakersPage() {
             </p>
 
             <div className="flex flex-wrap justify-center gap-6 text-sm text-gray-400">
-              <Link href="/#home" className="hover:text-red-500 transition-colors">
-                Home
-              </Link>
-              <span>•</span>
-              <Link href="/#about" className="hover:text-red-500 transition-colors">
-                About
-              </Link>
-              <span>•</span>
               <Link href="/speakers" className="hover:text-red-500 transition-colors">
                 Speakers
-              </Link>
-              <span>•</span>
-              <Link href="/team" className="hover:text-red-500 transition-colors">
-                Team
               </Link>
               <span>•</span>
               <Link href="/sponsors" className="hover:text-red-500 transition-colors">

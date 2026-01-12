@@ -18,7 +18,6 @@ export default function Home() {
               <Link href="#home" className="text-sm font-semibold hover:text-red-500 transition-colors duration-300">HOME</Link>
               <Link href="#about" className="text-sm font-semibold hover:text-red-500 transition-colors duration-300">ABOUT</Link>
               <Link href="/speakers" className="text-sm font-semibold hover:text-red-500 transition-colors duration-300">SPEAKERS</Link>
-              <Link href="/team" className="text-sm font-semibold hover:text-red-500 transition-colors duration-300">TEAM</Link>
               <Link href="/sponsors" className="text-sm font-semibold hover:text-red-500 transition-colors duration-300">SPONSORS</Link>
             </div>
           </div>
@@ -183,7 +182,11 @@ export default function Home() {
             {/* Speaker Card 1 - Rachel Gupta */}
             <div className="group bg-gray-900 rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl hover:shadow-red-600/20 transition-all duration-300 hover:scale-105 border border-gray-800">
               <div className="relative h-80 bg-gradient-to-br from-red-900 to-gray-800 overflow-hidden">
-                <div className="absolute inset-0 flex items-center justify-center text-7xl">👑</div>
+                <img 
+                  src="/images/speakers/rachel-gupta.png" 
+                  alt="Rachel Gupta"
+                  className="w-full h-full object-cover"
+                />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent"></div>
                 <div className="absolute top-4 right-4 bg-red-600 text-white text-xs font-bold px-3 py-1 rounded-full">
                   The Radiance
@@ -201,7 +204,11 @@ export default function Home() {
             {/* Speaker Card 2 - S. Vijayalakshmi */}
             <div className="group bg-gray-900 rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl hover:shadow-red-600/20 transition-all duration-300 hover:scale-105 border border-gray-800">
               <div className="relative h-80 bg-gradient-to-br from-gray-700 to-black overflow-hidden">
-                <div className="absolute inset-0 flex items-center justify-center text-7xl">♟️</div>
+                <img 
+                  src="/images/speakers/vijayalakshmi-subbaraman.png" 
+                  alt="S. Vijayalakshmi"
+                  className="w-full h-full object-cover"
+                />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent"></div>
                 <div className="absolute top-4 right-4 bg-red-600 text-white text-xs font-bold px-3 py-1 rounded-full">
                   The MasterMind
@@ -211,7 +218,7 @@ export default function Home() {
                 <h3 className="text-2xl font-bold mb-2 group-hover:text-red-500 transition-colors">S. Vijayalakshmi</h3>
                 <p className="text-red-400 font-semibold mb-3">India's First Woman Grandmaster</p>
                 <p className="text-gray-400 text-sm leading-relaxed">
-                  6 National Championships, Arjuna Award winner, and two Olympiad Silver Medals. A living legend inspiring the chess world.
+                  6 National Championships, Arjuna Award winner, and two Olympiad Silver Medals. A living legend inspiring chess world.
                 </p>
               </div>
             </div>
@@ -219,7 +226,11 @@ export default function Home() {
             {/* Speaker Card 3 - Dr. Tanu Jain */}
             <div className="group bg-gray-900 rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl hover:shadow-red-600/20 transition-all duration-300 hover:scale-105 border border-gray-800">
               <div className="relative h-80 bg-gradient-to-br from-red-800 to-gray-900 overflow-hidden">
-                <div className="absolute inset-0 flex items-center justify-center text-7xl">📚</div>
+                <img 
+                  src="/images/speakers/tanu-jain.png" 
+                  alt="Dr. Tanu Jain"
+                  className="w-full h-full object-cover"
+                />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent"></div>
                 <div className="absolute top-4 right-4 bg-red-600 text-white text-xs font-bold px-3 py-1 rounded-full">
                   The Mentor
@@ -237,7 +248,11 @@ export default function Home() {
             {/* Speaker Card 4 - Athil Krishna */}
             <div className="group bg-gray-900 rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl hover:shadow-red-600/20 transition-all duration-300 hover:scale-105 border border-gray-800">
               <div className="relative h-80 bg-gradient-to-br from-gray-800 to-red-900 overflow-hidden">
-                <div className="absolute inset-0 flex items-center justify-center text-7xl">🤖</div>
+                <img 
+                  src="/images/speakers/athil-krishna.png" 
+                  alt="Athil Krishna"
+                  className="w-full h-full object-cover"
+                />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent"></div>
                 <div className="absolute top-4 right-4 bg-red-600 text-white text-xs font-bold px-3 py-1 rounded-full">
                   The Futurist
@@ -255,7 +270,11 @@ export default function Home() {
             {/* Speaker Card 5 - Rakesh Asthaana */}
             <div className="group bg-gray-900 rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl hover:shadow-red-600/20 transition-all duration-300 hover:scale-105 border border-gray-800">
               <div className="relative h-80 bg-gradient-to-br from-red-900 to-black overflow-hidden">
-                <div className="absolute inset-0 flex items-center justify-center text-7xl">⚖️</div>
+                <img 
+                  src="/images/speakers/rakesh-asthana.png" 
+                  alt="Rakesh Asthaana"
+                  className="w-full h-full object-cover"
+                />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent"></div>
                 <div className="absolute top-4 right-4 bg-red-600 text-white text-xs font-bold px-3 py-1 rounded-full">
                   The Exemplary
@@ -356,17 +375,9 @@ export default function Home() {
               <span>•</span>
               <a href="#about" className="hover:text-red-500 transition-colors">About</a>
               <span>•</span>
-              <a href="#speakers" className="hover:text-red-500 transition-colors">Speakers</a>
+              <a href="/speakers" className="hover:text-red-500 transition-colors">Speakers</a>
               <span>•</span>
               <a href="/sponsors" className="hover:text-red-500 transition-colors">Sponsors</a>
-            </div>
-            
-            <div className="flex flex-wrap justify-center gap-4 text-sm text-gray-400">
-              <a href="#" className="hover:text-white hover:underline transition-colors">Privacy Policy</a>
-              <span>•</span>
-              <a href="#" className="hover:text-white hover:underline transition-colors">Terms of Service</a>
-              <span>•</span>
-              <a href="#" className="hover:text-white hover:underline transition-colors">Code of Conduct</a>
             </div>
             
             <div className="pt-6 border-t border-gray-800 w-full">
