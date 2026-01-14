@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { useRef, useState } from 'react';
 
 export default function SponsorsPage() {
-  const sponsors = [
+  const pastSponsors = [
     {
       name: 'Red Bull',
       logo: '/images/sponsors/redbull.png',
@@ -82,7 +82,7 @@ export default function SponsorsPage() {
     }
   ];
 
-  const SponsorCard = ({ sponsor, index }: { sponsor: typeof sponsors[0]; index: number }) => {
+  const SponsorCard = ({ sponsor, index }: { sponsor: typeof pastSponsors[0]; index: number }) => {
     const cardRef = useRef<HTMLDivElement>(null);
     const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 
@@ -179,10 +179,10 @@ export default function SponsorsPage() {
 
         <div className="max-w-7xl mx-auto text-center relative z-10">
           <h1 className="text-6xl md:text-8xl font-black mb-6">
-            Our <span className="text-red-600">Sponsors</span>
+            Past <span className="text-red-600">Sponsors</span>
           </h1>
           <p className="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto mb-8">
-            Partnering with visionaries to make TEDxBITSGoa 2025 possible
+            Honoring the organizations that supported TEDxBITSGoa events
           </p>
           <div className="inline-block px-6 py-3 bg-red-600/10 border border-red-600/30 rounded-full">
             <p className="text-red-400 font-semibold">Thank you for believing in ideas worth spreading</p>
@@ -194,7 +194,7 @@ export default function SponsorsPage() {
       <section className="py-16 px-4">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {sponsors.map((sponsor, index) => (
+            {pastSponsors.map((sponsor, index) => (
               <SponsorCard key={index} sponsor={sponsor} index={index} />
             ))}
           </div>
