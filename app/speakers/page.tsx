@@ -286,6 +286,14 @@ export default function SpeakersPage() {
             </p>
 
             <div className="flex flex-wrap justify-center gap-6 text-sm text-gray-400">
+              <a href="/" className="hover:text-red-500 transition-colors">
+                Home
+              </a>
+              <span>•</span>
+              <a href="/#about" className="hover:text-red-500 transition-colors">
+                About
+              </a>
+              <span>•</span>
               <Link href="/speakers" className="hover:text-red-500 transition-colors">
                 Speakers
               </Link>
