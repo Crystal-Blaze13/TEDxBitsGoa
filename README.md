@@ -2,7 +2,7 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-Official website for TEDx BITS Goa, an independently organized TED event at BITS Pilani K K Birla Goa Campus.
+Official website for TEDx BITS Goa, an independently organized TED event at BITS Pilani K K Birla Goa Campus. - Palak Kshetrapal
 
 ## 🚀 Features
 

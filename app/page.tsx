@@ -216,7 +216,7 @@ export default function Home() {
               </div>
               <div className="p-6">
                 <h3 className="text-2xl font-bold mb-2 group-hover:text-red-500 transition-colors">S. Vijayalakshmi</h3>
-                <p className="text-red-400 font-semibold mb-3">India's First Woman Grandmaster</p>
+                <p className="text-red-400 font-semibold mb-3">India&apos;s First Woman Grandmaster</p>
                 <p className="text-gray-400 text-sm leading-relaxed">
                   6 National Championships, Arjuna Award winner, and two Olympiad Silver Medals. A living legend inspiring chess world.
                 </p>

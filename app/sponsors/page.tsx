@@ -236,13 +236,13 @@ export default function SponsorsPage() {
             </p>
 
             <div className="flex flex-wrap justify-center gap-6 text-sm text-gray-400">
-              <a href="/" className="hover:text-red-500 transition-colors">
+              <Link href="/" className="hover:text-red-500 transition-colors">
                 Home
-              </a>
+              </Link>
               <span>•</span>
-              <a href="/#about" className="hover:text-red-500 transition-colors">
+              <Link href="/#about" className="hover:text-red-500 transition-colors">
                 About
-              </a>
+              </Link>
               <span>•</span>
               <Link href="/speakers" className="hover:text-red-500 transition-colors">
                 Speakers
