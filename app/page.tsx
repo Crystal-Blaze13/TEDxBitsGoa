@@ -26,58 +26,108 @@ export default function Home() {
 
       {/* Hero Section */}
       <section id="home" className="relative h-screen flex items-center justify-center text-center px-8 md:px-12 bg-black">
+        {/* Background Effects */}
+        <div className="pointer-events-none absolute inset-0 z-0">
+          {/* Layer 1 - Copper radial glow */}
+          <div 
+            className="absolute top-0 left-1/2 transform -translate-x-1/2 w-[600px] h-[400px] rounded-full opacity-8 animate-pulse"
+            style={{
+              background: 'radial-gradient(circle, rgba(200, 134, 10, 0.08) 0%, transparent 70%)',
+              animation: 'pulse 8s ease-in-out infinite',
+            }}
+          />
+          
+          {/* Layer 2 - TEDxLightRays (reduced opacity) */}
+          <div className="absolute inset-0 opacity-35">
+            {/* Existing TEDxLightRays component would go here */}
+          </div>
+          
+          {/* Layer 3 - Subtle grain texture */}
+          <div 
+            className="absolute inset-0 opacity-3"
+            style={{
+              backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.03'/%3E%3C/svg%3E")`,
+            }}
+          />
+        </div>
+
         <div className="relative z-20 w-full px-4 flex flex-col items-center justify-center">
           <div className="flex flex-col items-center">
-            <div className="relative w-full max-w-6xl mx-auto flex justify-center overflow-visible pb-24 px-4">
-              <div className="relative inline-block">
+            {/* Theme Logo */}
+            <div 
+              className="mb-8 w-32 h-32 md:w-44 md:h-44 object-contain"
+              style={{
+                filter: 'drop-shadow(0 0 24px rgba(200, 134, 10, 0.4))',
+                animation: 'fadeInUp 0.6s ease-out 0s both',
+              }}
+            >
+              <img 
+                src="/theme_logo.png" 
+                alt="Odyssey Within Theme Logo"
+                className="w-full h-full object-contain"
+              />
+            </div>
+
+            {/* Hero Title */}
+            <div className="relative w-full max-w-6xl mx-auto flex justify-center overflow-visible pb-8 px-4">
+              <div className="relative flex flex-col items-center">
+                {/* Line 1: ODYSSEY */}
                 <h1 
-                  className="text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-black leading-none uppercase relative z-0" 
+                  className="font-black leading-none uppercase relative z-10 mb-4" 
                   style={{ 
-                    fontFamily: 'var(--font-bebas-neue)', 
-                    color: '#E62B1E',
-                    letterSpacing: '-0.02em',
-                    textShadow: '2px 2px 4px rgba(0,0,0,0.3)',
-                    fontSize: 'clamp(3.2rem, 8vw, 7.2rem)'
-                  }}
-                >
-                  UNVEILING
-                </h1>
-                <h2 
-                  className="leading-none italic absolute left-1/2 transform -translate-x-1/2 whitespace-nowrap z-10" 
-                  style={{ 
-                    fontFamily: 'var(--font-great-vibes)', 
-                    background: 'linear-gradient(135deg, #D4AF37 0%, #F4E5B8 50%, #C9A961 100%)',
+                    fontFamily: 'var(--font-cinzel)', 
+                    background: 'linear-gradient(135deg, #C8860A, #E8A830, #D4941A, #F0C060)',
                     WebkitBackgroundClip: 'text',
                     WebkitTextFillColor: 'transparent',
                     backgroundClip: 'text',
-                    top: '50%',
-                    letterSpacing: '0.05em',
-                    textShadow: '0 2px 10px rgba(212, 175, 55, 0.3)',
-                    filter: 'drop-shadow(0 2px 8px rgba(212, 175, 55, 0.4))',
-                    minWidth: '120%',
-                    fontSize: 'clamp(4.16rem, 10.4vw, 9.36rem)'
+                    textShadow: '0 0 20px rgba(200, 134, 10, 0.5)',
+                    fontSize: 'clamp(5rem, 12vw, 10rem)',
+                    animation: 'fadeInUp 0.6s ease-out 0.3s both',
                   }}
                 >
-                  Epiphany
+                  ODYSSEY
+                </h1>
+                
+                {/* Line 2: WITHIN */}
+                <h2 
+                  className="font-black leading-none uppercase relative z-10" 
+                  style={{ 
+                    fontFamily: 'var(--font-bebas-neue)', 
+                    background: 'linear-gradient(135deg, #8B1A1A, #C0392B)',
+                    WebkitBackgroundClip: 'text',
+                    WebkitTextFillColor: 'transparent',
+                    backgroundClip: 'text',
+                    letterSpacing: '0.4em',
+                    fontSize: 'clamp(3rem, 8vw, 6rem)',
+                    animation: 'fadeInUp 0.6s ease-out 0.5s both',
+                  }}
+                >
+                  WITHIN
                 </h2>
               </div>
             </div>
+            
             <div className="h-16 sm:h-20 md:h-24 lg:h-28"></div>
             
             <div className="mt-12 max-w-4xl mx-auto space-y-4 text-gray-200">
-              <p className="text-base md:text-lg leading-relaxed">
-                In a world of the unknown, we are merely strides away from discovery. A question stirs within us, a thirst for knowledge, not knowing any bounds. This is about you, a call for the unique that celebrates the journey.
+              {/* Body Text */}
+              <p className="text-base md:text-lg leading-relaxed max-w-2xl mx-auto text-gray-300">
+                Too often, we look outward for what was always meant to be uncovered in silence. Unaware that the answers have always been forming, we wait for a spark powerful enough to break our stillness and summon the courage to begin our own odyssey inward. This 22nd March at TEDxBITSGoa, be ready to cross the threshold. Be ready to explore the <span style={{ background: 'linear-gradient(135deg, #C8860A, #E8A830)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>Odyssey Within</span>.
               </p>
               
-              <div className="bg-black/40 p-4 rounded-lg border-l-4 border-red-600 my-4">
-                <p className="italic text-base md:text-lg text-gray-300">
-                  "Inspiration can come in such small ways that if you sit there just waiting for the big epiphany, you'll sit there for the rest of your life."
+              {/* Quote Block */}
+              <div className="bg-black/40 p-4 rounded-lg border-l-4 border-[#C8860A] my-4 max-w-2xl mx-auto">
+                <p className="italic text-base md:text-lg text-gray-400">
+                  "Not all those who wander are lost."
                 </p>
-                <p className="text-right text-red-400 mt-2 text-sm font-semibold">— Irvine Welsh</p>
+                <p className="text-right mt-2 text-sm font-semibold uppercase tracking-wider" style={{ color: '#C8860A' }}>
+                  — J.R.R. Tolkien
+                </p>
               </div>
               
+              {/* Date Line */}
               <p className="text-lg md:text-xl font-semibold text-white">
-                Join us on <span className="text-red-400">22nd February 2025</span> at TEDxBITSGoa
+                Join us on <span className="text-red-400">22nd March 2026</span> at TEDxBITSGoa
               </p>
             </div>
           </div>
@@ -131,7 +181,7 @@ export default function Home() {
                     <div className="text-3xl mr-4">📅</div>
                     <div>
                       <p className="font-bold text-lg">Date</p>
-                      <p className="text-red-100">22nd February, 2025</p>
+                      <p className="text-red-100">22nd March, 2026</p>
                       <p className="text-sm text-red-100">10:00 AM - 6:00 PM</p>
                     </div>
                   </div>
@@ -147,8 +197,8 @@ export default function Home() {
                     <div className="text-3xl mr-4">🎯</div>
                     <div>
                       <p className="font-bold text-lg">Theme</p>
-                      <p className="text-red-100 text-xl font-semibold">"Unveiling Epiphany"</p>
-                      <p className="text-sm text-red-100 mt-1">Celebrating the journey of discovery</p>
+                      <p className="text-red-100 text-xl font-semibold">"Odyssey Within"</p>
+                      <p className="text-sm text-red-100 mt-1">The journey inward begins</p>
                     </div>
                   </div>
                   <div className="flex items-start">
