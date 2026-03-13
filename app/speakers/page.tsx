@@ -3,55 +3,15 @@
 import Link from 'next/link';
 
 export default function SpeakersPage() {
-  const currentSpeakers = [
-    {
-      name: 'Rachel Gupta',
-      title: 'Miss Grand International 2024',
-      nickname: 'The Radiance',
-      icon: '👑',
-      image: '/images/speakers/rachel-gupta.png',
-      description: 'First Indian to win Miss Grand International. From small-town dreamer to global icon with 1.5M followers, inspiring millions worldwide.',
-      gradient: 'from-red-900 to-gray-800'
-    },
-    {
-      name: 'S. Vijayalakshmi',
-      title: "India's First Woman Grandmaster",
-      nickname: 'The MasterMind',
-      icon: '♟️',
-      image: '/images/speakers/vijayalakshmi-subbaraman.png',
-      description: '6 National Championships, Arjuna Award winner, and two Olympiad Silver Medals. A living legend inspiring by chess world.',
-      gradient: 'from-gray-700 to-black'
-    },
-    {
-      name: 'Dr. Tanu Jain',
-      title: 'Founder, Tathastu IAS',
-      nickname: 'The Mentor',
-      icon: '📚',
-      image: '/images/speakers/tanu-jain.png',
-      description: 'Former civil servant, dental surgeon, and DRDO Assistant Director. Leading UPSC mentor helping thousands achieve their dreams.',
-      gradient: 'from-red-800 to-gray-900'
-    },
-    {
-      name: 'Athil Krishna',
-      title: 'AI & Robotics Innovator',
-      nickname: 'The Futurist',
-      icon: '🤖',
-      image: '/images/speakers/athil-krishna.png',
-      description: 'From rural Kerala to global AI pioneer. Founder of iHub Robotics revolutionizing robotics, education, and aerospace with Robot TARA.',
-      gradient: 'from-gray-800 to-red-900'
-    },
-    {
-      name: 'Rakesh Asthaana',
-      title: 'Former Commissioner of Police, Delhi',
-      nickname: 'The Exemplary',
-      icon: '⚖️',
-      image: '/images/speakers/rakesh-asthana.png',
-      description: '40 years of exemplary service. DG of BSF, Special Director CBI. Investigated Fodder Scam and 2008 Ahmedabad bombings.',
-      gradient: 'from-red-900 to-black'
-    }
-  ];
 
   const pastSpeakersByYear = {
+    '2025': [
+      'Rachel Gupta',
+      'S. Vijayalakshmi',
+      'Dr. Tanu Jain',
+      'Athil Krishna',
+      'Rakesh Asthaana'
+    ],
     '2024': [
       'Ashok Kumar Er',
       'Mukesh Chhabra', 
@@ -179,45 +139,27 @@ export default function SpeakersPage() {
         </div>
       </section>
 
-      {/* Current Speakers 2025 */}
+      {/* Current Speakers 2026 */}
       <section className="py-16 px-4">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-4xl md:text-5xl font-black mb-4">
-              TEDxBITSGoa <span className="text-red-600">2025</span>
+              TEDxBITSGoa <span className="text-red-600">2026</span>
             </h2>
-            <p className="text-gray-400 text-lg">Join us on 22nd February 2025</p>
+            <p className="text-gray-400 text-lg">Join us on 22nd March 2026</p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {currentSpeakers.map((speaker, index) => (
-              <div
-                key={index}
-                className="group bg-gray-900 rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl hover:shadow-red-600/20 transition-all duration-300 hover:scale-105 border border-gray-800"
-                style={{ animation: `fadeInUp 0.6s ease-out ${index * 0.1}s both` }}
-              >
-                <div className={`relative h-80 bg-gradient-to-br ${speaker.gradient} overflow-hidden`}>
-                  {speaker.image ? (
-                    <img 
-                      src={speaker.image} 
-                      alt={speaker.name}
-                      className="w-full h-full object-cover"
-                    />
-                  ) : (
-                    <div className="absolute inset-0 flex items-center justify-center text-7xl">{speaker.icon}</div>
-                  )}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent"></div>
-                  <div className="absolute top-4 right-4 bg-red-600 text-white text-xs font-bold px-3 py-1 rounded-full">
-                    {speaker.nickname}
-                  </div>
-                </div>
-                <div className="p-6">
-                  <h3 className="text-2xl font-bold mb-2 group-hover:text-red-500 transition-colors">{speaker.name}</h3>
-                  <p className="text-red-400 font-semibold mb-3">{speaker.title}</p>
-                  <p className="text-gray-400 text-sm leading-relaxed">{speaker.description}</p>
-                </div>
-              </div>
-            ))}
+          <div className="text-center mb-16">
+            <div className="inline-block bg-gray-900/50 border border-gray-800 rounded-2xl p-12 max-w-md">
+              <div className="text-7xl mb-4">🎤</div>
+              <h3 className="text-3xl font-black mb-4 text-white">Coming Soon</h3>
+              <p className="text-gray-400 text-lg mb-2">TEDxBITSGoa 2026</p>
+              <p className="text-gray-500 text-sm">Our incredible lineup of speakers will be announced soon. Stay tuned for another inspiring journey of ideas worth spreading!</p>
+            </div>
+          </div>
+
+          <div className="text-center">
+            <p className="text-xl mb-6 text-gray-300">Join us on 22nd March 2026 for an unforgettable experience!</p>
           </div>
         </div>
       </section>

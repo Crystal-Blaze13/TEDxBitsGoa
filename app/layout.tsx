@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { Space_Grotesk, Bebas_Neue, Great_Vibes, Cinzel } from 'next/font/google'
+import { Space_Grotesk, Bebas_Neue, Great_Vibes } from 'next/font/google'
 import './globals.css'
 
 const spaceGrotesk = Space_Grotesk({ 
@@ -17,12 +17,6 @@ const greatVibes = Great_Vibes({
   weight: '400',
   subsets: ['latin'],
   variable: '--font-great-vibes',
-})
-
-const cinzel = Cinzel({ 
-  weight: ['400', '700'],
-  subsets: ['latin'],
-  variable: '--font-cinzel',
 })
 
 export const metadata: Metadata = {
@@ -50,7 +44,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${spaceGrotesk.variable} ${bebasNeue.variable} ${greatVibes.variable} ${cinzel.variable} antialiased`}>
+      <body className={`${spaceGrotesk.variable} ${bebasNeue.variable} ${greatVibes.variable} antialiased`}>
         {children}
       </body>
     </html>
