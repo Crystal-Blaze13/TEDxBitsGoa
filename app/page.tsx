@@ -25,7 +25,15 @@ export default function Home() {
       </nav>
 
       {/* Hero Section */}
-      <section id="home" className="relative h-screen flex items-center justify-center text-center px-8 md:px-12 bg-black">
+      <section id="home" style={{
+        position: 'relative',
+        minHeight: '100vh',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        background: 'black',
+        paddingTop: '80px',
+      }}>
         {/* Background Effects */}
         <div className="pointer-events-none absolute inset-0 z-0">
           {/* Layer 1 - Copper radial glow */}
@@ -51,86 +59,78 @@ export default function Home() {
           />
         </div>
 
-        <div className="relative z-20 w-full px-4 flex flex-col items-center justify-center">
-          <div className="flex flex-col items-center">
-            {/* Theme Logo */}
-            <div 
-              className="mb-8 w-32 h-32 md:w-44 md:h-44 object-contain"
-              style={{
-                filter: 'drop-shadow(0 0 24px rgba(200, 134, 10, 0.4))',
-                animation: 'fadeInUp 0.6s ease-out 0s both',
-              }}
-            >
-              <img 
-                src="/theme_logo.png" 
-                alt="Odyssey Within Theme Logo"
-                className="w-full h-full object-contain"
-              />
-            </div>
+        <div style={{
+          position: 'relative',
+          zIndex: 20,
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          justifyContent: 'center',
+          width: '100%',
+          maxWidth: '900px',
+          margin: '0 auto',
+          padding: '0 2rem',
+          gap: '0',
+        }}>
 
-            {/* Hero Title */}
-            <div className="relative w-full max-w-6xl mx-auto flex justify-center overflow-visible pb-8 px-4">
-              <div className="relative flex flex-col items-center">
-                {/* Line 1: ODYSSEY */}
-                <h1 
-                  className="font-black leading-none uppercase relative z-10 mb-4" 
-                  style={{ 
-                    fontFamily: 'var(--font-cinzel)', 
-                    background: 'linear-gradient(135deg, #C8860A, #E8A830, #D4941A, #F0C060)',
-                    WebkitBackgroundClip: 'text',
-                    WebkitTextFillColor: 'transparent',
-                    backgroundClip: 'text',
-                    textShadow: '0 0 20px rgba(200, 134, 10, 0.5)',
-                    fontSize: 'clamp(5rem, 12vw, 10rem)',
-                    animation: 'fadeInUp 0.6s ease-out 0.3s both',
-                  }}
-                >
-                  ODYSSEY
-                </h1>
-                
-                {/* Line 2: WITHIN */}
-                <h2 
-                  className="font-black leading-none uppercase relative z-10" 
-                  style={{ 
-                    fontFamily: 'var(--font-bebas-neue)', 
-                    background: 'linear-gradient(135deg, #8B1A1A, #C0392B)',
-                    WebkitBackgroundClip: 'text',
-                    WebkitTextFillColor: 'transparent',
-                    backgroundClip: 'text',
-                    letterSpacing: '0.4em',
-                    fontSize: 'clamp(3rem, 8vw, 6rem)',
-                    animation: 'fadeInUp 0.6s ease-out 0.5s both',
-                  }}
-                >
-                  WITHIN
-                </h2>
-              </div>
-            </div>
-            
-            <div className="h-16 sm:h-20 md:h-24 lg:h-28"></div>
-            
-            <div className="mt-12 max-w-4xl mx-auto space-y-4 text-gray-200">
-              {/* Body Text */}
-              <p className="text-base md:text-lg leading-relaxed max-w-2xl mx-auto text-gray-300">
-                Too often, we look outward for what was always meant to be uncovered in silence. Unaware that the answers have always been forming, we wait for a spark powerful enough to break our stillness and summon the courage to begin our own odyssey inward. This 22nd March at TEDxBITSGoa, be ready to cross the threshold. Be ready to explore the <span style={{ background: 'linear-gradient(135deg, #C8860A, #E8A830)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>Odyssey Within</span>.
-              </p>
-              
-              {/* Quote Block */}
-              <div className="bg-black/40 p-4 rounded-lg border-l-4 border-[#C8860A] my-4 max-w-2xl mx-auto">
-                <p className="italic text-base md:text-lg text-gray-400">
-                  "Not all those who wander are lost."
-                </p>
-                <p className="text-right mt-2 text-sm font-semibold uppercase tracking-wider" style={{ color: '#C8860A' }}>
-                  — J.R.R. Tolkien
-                </p>
-              </div>
-              
-              {/* Date Line */}
-              <p className="text-lg md:text-xl font-semibold text-white">
-                Join us on <span className="text-red-400">22nd March 2026</span> at TEDxBITSGoa
-              </p>
-            </div>
+          {/* LOGO */}
+          <div style={{
+            width: '100%',
+            maxWidth: '780px',
+          }}>
+            <img
+              src="/images/theme_logo.png"
+              alt="Odyssey Within"
+              style={{
+                width: '100%',
+                height: 'auto',
+                display: 'block',
+                objectFit: 'contain',
+                marginTop: '-20%',
+                marginBottom: '-20%',
+                filter: 'drop-shadow(0 0 50px rgba(200, 134, 10, 0.85))',
+              }}
+            />
           </div>
+
+          {/* BODY TEXT */}
+          <p style={{
+            fontSize: 'clamp(0.9rem, 1.4vw, 1.05rem)',
+            color: '#9CA3AF',
+            lineHeight: '1.85',
+            maxWidth: '100%',
+            width: '100%',
+            textAlign: 'center',
+            margin: '0',
+            padding: '0',
+          }}>
+            Too often, we look outward for what was always meant to be 
+            uncovered in silence. Unaware that the answers have always been 
+            forming, we wait for a spark powerful enough to break our stillness 
+            and summon the courage to begin our own odyssey inward. This 22nd 
+            March at TEDxBITSGoa, be ready to cross the threshold. Be ready to 
+            explore the{' '}
+            <span style={{
+              background: 'linear-gradient(135deg, #C8860A, #E8A830)',
+              WebkitBackgroundClip: 'text',
+              WebkitTextFillColor: 'transparent',
+              backgroundClip: 'text',
+            }}>Odyssey Within</span>.
+          </p>
+
+          {/* DATE LINE */}
+          <p style={{
+            marginTop: '1.25rem',
+            fontSize: '1rem',
+            fontWeight: '600',
+            color: 'white',
+            textAlign: 'center',
+          }}>
+            Join us on{' '}
+            <span style={{ color: '#F87171' }}>22nd March 2026</span>
+            {' '}at TEDxBITSGoa
+          </p>
+
         </div>
       </section>
 
@@ -225,123 +225,20 @@ export default function Home() {
             Our <span className="text-red-600">Speakers</span>
           </h2>
           <p className="text-center text-xl mb-16 max-w-3xl mx-auto text-gray-300">
-            Meet the visionaries, innovators, and thought leaders who will be sharing their groundbreaking ideas at TEDxBITSGoa
+            Visionaries, innovators, and thought leaders sharing ideas worth spreading
           </p>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            {/* Speaker Card 1 - Rachel Gupta */}
-            <div className="group bg-gray-900 rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl hover:shadow-red-600/20 transition-all duration-300 hover:scale-105 border border-gray-800">
-              <div className="relative h-80 bg-gradient-to-br from-red-900 to-gray-800 overflow-hidden">
-                <img 
-                  src="/images/speakers/rachel-gupta.png" 
-                  alt="Rachel Gupta"
-                  className="w-full h-full object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent"></div>
-                <div className="absolute top-4 right-4 bg-red-600 text-white text-xs font-bold px-3 py-1 rounded-full">
-                  The Radiance
-                </div>
-              </div>
-              <div className="p-6">
-                <h3 className="text-2xl font-bold mb-2 group-hover:text-red-500 transition-colors">Rachel Gupta</h3>
-                <p className="text-red-400 font-semibold mb-3">Miss Grand International 2024</p>
-                <p className="text-gray-400 text-sm leading-relaxed">
-                  First Indian to win Miss Grand International. From small-town dreamer to global icon with 1.5M followers, inspiring millions worldwide.
-                </p>
-              </div>
-            </div>
-            
-            {/* Speaker Card 2 - S. Vijayalakshmi */}
-            <div className="group bg-gray-900 rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl hover:shadow-red-600/20 transition-all duration-300 hover:scale-105 border border-gray-800">
-              <div className="relative h-80 bg-gradient-to-br from-gray-700 to-black overflow-hidden">
-                <img 
-                  src="/images/speakers/vijayalakshmi-subbaraman.png" 
-                  alt="S. Vijayalakshmi"
-                  className="w-full h-full object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent"></div>
-                <div className="absolute top-4 right-4 bg-red-600 text-white text-xs font-bold px-3 py-1 rounded-full">
-                  The MasterMind
-                </div>
-              </div>
-              <div className="p-6">
-                <h3 className="text-2xl font-bold mb-2 group-hover:text-red-500 transition-colors">S. Vijayalakshmi</h3>
-                <p className="text-red-400 font-semibold mb-3">India's First Woman Grandmaster</p>
-                <p className="text-gray-400 text-sm leading-relaxed">
-                  6 National Championships, Arjuna Award winner, and two Olympiad Silver Medals. A living legend inspiring chess world.
-                </p>
-              </div>
-            </div>
-            
-            {/* Speaker Card 3 - Dr. Tanu Jain */}
-            <div className="group bg-gray-900 rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl hover:shadow-red-600/20 transition-all duration-300 hover:scale-105 border border-gray-800">
-              <div className="relative h-80 bg-gradient-to-br from-red-800 to-gray-900 overflow-hidden">
-                <img 
-                  src="/images/speakers/tanu-jain.png" 
-                  alt="Dr. Tanu Jain"
-                  className="w-full h-full object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent"></div>
-                <div className="absolute top-4 right-4 bg-red-600 text-white text-xs font-bold px-3 py-1 rounded-full">
-                  The Mentor
-                </div>
-              </div>
-              <div className="p-6">
-                <h3 className="text-2xl font-bold mb-2 group-hover:text-red-500 transition-colors">Dr. Tanu Jain</h3>
-                <p className="text-red-400 font-semibold mb-3">Founder, Tathastu IAS</p>
-                <p className="text-gray-400 text-sm leading-relaxed">
-                  Former civil servant, dental surgeon, and DRDO Assistant Director. Leading UPSC mentor helping thousands achieve their dreams.
-                </p>
-              </div>
-            </div>
-            
-            {/* Speaker Card 4 - Athil Krishna */}
-            <div className="group bg-gray-900 rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl hover:shadow-red-600/20 transition-all duration-300 hover:scale-105 border border-gray-800">
-              <div className="relative h-80 bg-gradient-to-br from-gray-800 to-red-900 overflow-hidden">
-                <img 
-                  src="/images/speakers/athil-krishna.png" 
-                  alt="Athil Krishna"
-                  className="w-full h-full object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent"></div>
-                <div className="absolute top-4 right-4 bg-red-600 text-white text-xs font-bold px-3 py-1 rounded-full">
-                  The Futurist
-                </div>
-              </div>
-              <div className="p-6">
-                <h3 className="text-2xl font-bold mb-2 group-hover:text-red-500 transition-colors">Athil Krishna</h3>
-                <p className="text-red-400 font-semibold mb-3">AI & Robotics Innovator</p>
-                <p className="text-gray-400 text-sm leading-relaxed">
-                  From rural Kerala to global AI pioneer. Founder of iHub Robotics revolutionizing robotics, education, and aerospace with Robot TARA.
-                </p>
-              </div>
-            </div>
-            
-            {/* Speaker Card 5 - Rakesh Asthaana */}
-            <div className="group bg-gray-900 rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl hover:shadow-red-600/20 transition-all duration-300 hover:scale-105 border border-gray-800">
-              <div className="relative h-80 bg-gradient-to-br from-red-900 to-black overflow-hidden">
-                <img 
-                  src="/images/speakers/rakesh-asthana.png" 
-                  alt="Rakesh Asthaana"
-                  className="w-full h-full object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent"></div>
-                <div className="absolute top-4 right-4 bg-red-600 text-white text-xs font-bold px-3 py-1 rounded-full">
-                  The Exemplary
-                </div>
-              </div>
-              <div className="p-6">
-                <h3 className="text-2xl font-bold mb-2 group-hover:text-red-500 transition-colors">Rakesh Asthaana</h3>
-                <p className="text-red-400 font-semibold mb-3">Former Commissioner of Police, Delhi</p>
-                <p className="text-gray-400 text-sm leading-relaxed">
-                  40 years of exemplary service. DG of BSF, Special Director CBI. Investigated Fodder Scam and 2008 Ahmedabad bombings.
-                </p>
-              </div>
+          <div className="text-center mb-16">
+            <div className="inline-block bg-gray-900/50 border border-gray-800 rounded-2xl p-12 max-w-md">
+              <div className="text-7xl mb-4">🎤</div>
+              <h3 className="text-3xl font-black mb-4 text-white">Coming Soon</h3>
+              <p className="text-gray-400 text-lg mb-2">TEDxBITSGoa 2026</p>
+              <p className="text-gray-500 text-sm">Our incredible lineup of speakers will be announced soon. Stay tuned for another inspiring journey of ideas worth spreading!</p>
             </div>
           </div>
           
           <div className="text-center mt-16">
-            <p className="text-xl mb-6 text-gray-300">Join us on 22nd February 2025 to hear these incredible stories!</p>
+            <p className="text-xl mb-6 text-gray-300">Join us on 22nd March 2026 for an unforgettable experience!</p>
           </div>
         </div>
       </section>
