@@ -3,6 +3,33 @@
 import Link from 'next/link';
 
 export default function SpeakersPage() {
+  const currentSpeakers = [
+    {
+      name: 'Dr. Harsh Vardhan',
+      description: 'Former Union Minister of Health and Family Welfare, Dr. Harsh Vardhan played a key role in guiding India\'s public health response during the COVID-19 pandemic. A distinguished physician and policymaker, he has long been at the forefront of national health initiatives and disease eradication programs that have impacted millions across the country. Hear his insights on leadership, healthcare, and public service at TEDxBITSGOA.',
+      photo: '/images/speakers/speaker-1.jpg'
+    },
+    {
+      name: 'Anupriya Goenka',
+      description: 'From the grandeur of Padmaavat to the high stakes worlds of War and Tiger Zinda Hai, Anupriya Goenka has built a career defined by range and quiet power. Her performances in Sacred Games and Criminal Justice further showcase her depth and authenticity. With acclaimed work across formats, including the IIFA Digital Content Award for Berlin and OTT awards for Criminal Justice and Asur, her journey reflects craft over noise. Step beyond the screen and hear the story behind the work.',
+      photo: '/images/speakers/speaker-2.jpg'
+    },
+    {
+      name: 'RJ Naved',
+      description: 'Growing up, his voice was the soundtrack to every car ride. The man who turned prank calls into an art form, say hello to the one and only RJ Naved! He\'s the brain behind Mirchi Murga - India\'s most iconic prank call show. He has been making India laugh for over two decades, since winning Radio Mirchi\'s RJ Hunt in 2000. But Best RJ, Golden Mike winner, and Indian Icon Award holder are just some of the accolades to his name. With 11M+ Instagram followers and a "Best Comedy Influencer" award, he\'s a certified digital powerhouse.',
+      photo: '/images/speakers/speaker-3.jpg'
+    },
+    {
+      name: 'Aalekh Sharan',
+      description: 'A dynamic and brilliant mind - responsible for transforming AI from theoretic concepts to practical models on all our devices, say hello to Aalekh Sharan. Head of Agentic AI at Sarvam, one of India\'s premier homegrown AI companies, responsible for models that incorporate Indian languages and context. A radical thinker, he brings with him a live demonstration previously only shown at the International AI Summit held in Delhi, straight to TEDxBITS Goa, for a talk that promises to be as illuminating as it will be inspiring.',
+      photo: '/images/speakers/speaker-4.jpg'
+    },
+    {
+      name: 'Dr. Radhika Vathsan',
+      description: 'An ancient Indian instrument explained by a quantum physics researcher, that\'s what is in store for you when Dr. Radhika Vathsan takes the stage this Sunday on March 22nd. An expert in the Veena, and classically trained in Carnatic music by a lineage of maestros, she\'s going to walk through the science behind what makes music. She\'ll be topping it all off by performing live. Make sure not to miss it.',
+      photo: '/images/speakers/speaker-5.jpg'
+    }
+  ];
 
   const pastSpeakersByYear = {
     '2025': [
@@ -150,12 +177,51 @@ export default function SpeakersPage() {
           </div>
 
           <div className="text-center mb-16">
-            <div className="inline-block bg-gray-900/50 border border-gray-800 rounded-2xl p-12 max-w-md">
-              <div className="text-7xl mb-4">🎤</div>
-              <h3 className="text-3xl font-black mb-4 text-white">Coming Soon</h3>
-              <p className="text-gray-400 text-lg mb-2">TEDxBITSGoa 2026</p>
-              <p className="text-gray-500 text-sm">Our incredible lineup of speakers will be announced soon. Stay tuned for another inspiring journey of ideas worth spreading!</p>
-            </div>
+            <h2 className="text-4xl md:text-5xl font-black mb-4">
+              <span className="text-red-600">2026</span> Speakers
+            </h2>
+            <p className="text-xl text-gray-300 max-w-2xl mx-auto">
+              Meet the incredible minds sharing their ideas at TEDxBITSGoa 2026
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {currentSpeakers.map((speaker, index) => (
+              <div
+                key={index}
+                className="group relative bg-gradient-to-br from-gray-900 to-black rounded-3xl overflow-hidden border border-red-900/30 hover:border-red-600/50 transition-all duration-500 hover:scale-105"
+                style={{
+                  animation: `fadeInUp 0.6s ease-out ${index * 0.1}s both`
+                }}
+              >
+                {/* Gradient overlay */}
+                <div className="absolute inset-0 bg-gradient-to-br from-red-600/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+
+                <div className="relative p-8">
+                  {/* Speaker Photo */}
+                  <div className="mb-6 w-full aspect-square flex items-center justify-center bg-white/5 rounded-xl overflow-hidden">
+                    <img
+                      src={speaker.photo}
+                      alt={speaker.name}
+                      className="w-full h-full object-cover opacity-90 group-hover:opacity-100 transition-all duration-300"
+                    />
+                  </div>
+
+                  {/* Name */}
+                  <h3 className="text-2xl font-black mb-4 text-white group-hover:text-red-400 transition-colors">
+                    {speaker.name}
+                  </h3>
+
+                  {/* Description */}
+                  <p className="text-gray-300 text-sm leading-relaxed line-clamp-4">
+                    {speaker.description}
+                  </p>
+                </div>
+
+                {/* Corner accent */}
+                <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-red-600/20 to-transparent rounded-bl-full opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              </div>
+            ))}
           </div>
 
           <div className="text-center">

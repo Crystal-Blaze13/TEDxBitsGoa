@@ -4,6 +4,75 @@ import Link from 'next/link';
 import { useRef, useState } from 'react';
 
 export default function SponsorsPage() {
+  const currentSponsors = [
+    {
+      name: 'PETA',
+      role: 'Official Animal Welfare Partner',
+      logo: '/images/sponsors/peta.png',
+      gradient: 'from-red-600 to-red-800'
+    },
+    {
+      name: 'M.O.M',
+      role: 'Snacking Partner',
+      logo: '/images/sponsors/mom.png',
+      gradient: 'from-red-700 to-gray-900'
+    },
+    {
+      name: 'Skull Candy',
+      role: 'Official Audio Partner',
+      logo: '/images/sponsors/skullcandy.png',
+      gradient: 'from-red-800 to-gray-900'
+    },
+    {
+      name: 'Nissin',
+      role: 'Cup Noodles Partner',
+      logo: '/images/sponsors/nissin.png',
+      gradient: 'from-red-800 to-black'
+    },
+    {
+      name: 'JoloChip',
+      role: 'Conference Partner',
+      logo: '/images/sponsors/jolochip.png',
+      gradient: 'from-gray-900 to-red-900'
+    },
+    {
+      name: 'Bryan and Candy',
+      role: 'Official Body Care Partner',
+      logo: '/images/sponsors/bryanandcandy.png',
+      gradient: 'from-red-900 to-gray-800'
+    },
+    {
+      name: 'Plum',
+      role: 'Co Powered By',
+      logo: '/images/sponsors/plum.png',
+      gradient: 'from-gray-800 to-black'
+    },
+    {
+      name: 'Times Prime',
+      role: 'Conference Partner',
+      logo: '/images/sponsors/timesprime.png',
+      gradient: 'from-black to-red-700'
+    },
+    {
+      name: 'EaseMyTrip',
+      role: 'Official Travel Partner',
+      logo: '/images/sponsors/easemytrip.png',
+      gradient: 'from-gray-900 to-red-800'
+    },
+    {
+      name: 'Muscleblaze',
+      role: 'Official Nutrition Partner',
+      logo: '/images/sponsors/muscleblaze.png',
+      gradient: 'from-gray-900 to-black'
+    },
+    {
+      name: 'Prime',
+      role: 'Official Beverage Partner',
+      logo: '/images/sponsors/prime.png',
+      gradient: 'from-black to-gray-900'
+    }
+  ];
+
   const pastSponsors = [
     {
       name: 'Red Bull',
@@ -82,6 +151,74 @@ export default function SponsorsPage() {
     }
   ];
 
+  const CurrentSponsorCard = ({ sponsor, index }: { sponsor: typeof currentSponsors[0]; index: number }) => {
+    const cardRef = useRef<HTMLDivElement>(null);
+    const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+
+    const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+      if (!cardRef.current) return;
+      const rect = cardRef.current.getBoundingClientRect();
+      setMousePosition({
+        x: e.clientX - rect.left,
+        y: e.clientY - rect.top
+      });
+    };
+
+    return (
+      <div
+        ref={cardRef}
+        onMouseMove={handleMouseMove}
+        className="group relative bg-gradient-to-br from-gray-900 to-black rounded-3xl overflow-hidden border border-red-900/30 hover:border-red-600/50 transition-all duration-500 hover:scale-105"
+        style={{
+          animation: `fadeInUp 0.6s ease-out ${index * 0.1}s both`
+        }}
+      >
+        {/* Spotlight effect */}
+        <div
+          className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
+          style={{
+            background: `radial-gradient(circle 300px at ${mousePosition.x}px ${mousePosition.y}px, rgba(230, 43, 30, 0.15), transparent 80%)`
+          }}
+        />
+
+        {/* Gradient overlay */}
+        <div className={`absolute inset-0 bg-gradient-to-br ${sponsor.gradient} opacity-0 group-hover:opacity-20 transition-opacity duration-500`} />
+
+        <div className="relative p-8 flex flex-col items-center text-center h-full">
+          {/* Logo */}
+          <div className="mb-6 w-full h-24 flex items-center justify-center bg-white/5 rounded-xl p-6 backdrop-blur-sm">
+            <img
+              src={sponsor.logo}
+              alt={sponsor.name}
+              className="max-w-full max-h-full object-contain opacity-90 group-hover:opacity-100 transition-all duration-300 filter brightness-110 group-hover:brightness-125"
+              style={{
+                maxHeight: '80px',
+                width: 'auto',
+                maxWidth: '200px'
+              }}
+            />
+          </div>
+
+          {/* Name */}
+          <h3 className="text-2xl font-black mb-2 text-white group-hover:text-red-400 transition-colors">
+            {sponsor.name}
+          </h3>
+
+          {/* Role */}
+          <p className="text-sm text-red-400 mb-4 font-medium">
+            {sponsor.role}
+          </p>
+
+          {/* Decorative line */}
+          <div className="w-16 h-1 bg-gradient-to-r from-transparent via-red-600 to-transparent opacity-50 group-hover:opacity-100 transition-opacity" />
+        </div>
+
+        {/* Corner accent */}
+        <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-red-600/20 to-transparent rounded-bl-full opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+      </div>
+    );
+  };
+
   const SponsorCard = ({ sponsor, index }: { sponsor: typeof pastSponsors[0]; index: number }) => {
     const cardRef = useRef<HTMLDivElement>(null);
     const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -117,11 +254,16 @@ export default function SponsorsPage() {
 
         <div className="relative p-8 flex flex-col items-center text-center h-full">
           {/* Logo */}
-          <div className="mb-6 w-full h-20 flex items-center justify-center bg-white/5 rounded-xl p-4 backdrop-blur-sm">
+          <div className="mb-6 w-full h-24 flex items-center justify-center bg-white/5 rounded-xl p-6 backdrop-blur-sm">
             <img
               src={sponsor.logo}
               alt={sponsor.name}
-              className="max-w-full max-h-full object-contain opacity-80 group-hover:opacity-100 transition-opacity"
+              className="max-w-full max-h-full object-contain opacity-90 group-hover:opacity-100 transition-all duration-300 filter brightness-110 group-hover:brightness-125"
+              style={{
+                maxHeight: '80px',
+                width: 'auto',
+                maxWidth: '200px'
+              }}
             />
           </div>
 
@@ -158,7 +300,7 @@ export default function SponsorsPage() {
               <Link href="/#about" className="text-sm font-semibold hover:text-red-500 transition-colors duration-300">
                 ABOUT
               </Link>
-              <Link href="/#speakers" className="text-sm font-semibold hover:text-red-500 transition-colors duration-300">
+              <Link href="/speakers" className="text-sm font-semibold hover:text-red-500 transition-colors duration-300">
                 SPEAKERS
               </Link>
               <Link href="/sponsors" className="text-sm font-semibold text-red-500 transition-colors duration-300">
@@ -179,10 +321,10 @@ export default function SponsorsPage() {
 
         <div className="max-w-7xl mx-auto text-center relative z-10">
           <h1 className="text-6xl md:text-8xl font-black mb-6">
-            Past <span className="text-red-600">Sponsors</span>
+            Our <span className="text-red-600">Sponsors</span>
           </h1>
           <p className="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto mb-8">
-            Honoring the organizations that supported TEDxBITSGoa events
+            Honoring the organizations that support TEDxBITSGoa 2026 and our journey of spreading ideas
           </p>
           <div className="inline-block px-6 py-3 bg-red-600/10 border border-red-600/30 rounded-full">
             <p className="text-red-400 font-semibold">Thank you for believing in ideas worth spreading</p>
@@ -190,9 +332,36 @@ export default function SponsorsPage() {
         </div>
       </section>
 
-      {/* Sponsors Grid */}
+      {/* Current Sponsors Section */}
       <section className="py-16 px-4">
         <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl md:text-5xl font-black mb-4">
+              <span className="text-red-600">2026</span> Sponsors
+            </h2>
+            <p className="text-xl text-gray-300 max-w-2xl mx-auto">
+              Our incredible partners making TEDxBITSGoa 2026 possible
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {currentSponsors.map((sponsor, index) => (
+              <CurrentSponsorCard key={index} sponsor={sponsor} index={index} />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Past Sponsors Section */}
+      <section className="py-16 px-4 bg-black/50">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl md:text-5xl font-black mb-4">
+              Past <span className="text-red-600">Sponsors</span>
+            </h2>
+            <p className="text-xl text-gray-300 max-w-2xl mx-auto">
+              Honoring the organizations that supported TEDxBITSGoa events in previous years
+            </p>
+          </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {pastSponsors.map((sponsor, index) => (
               <SponsorCard key={index} sponsor={sponsor} index={index} />
