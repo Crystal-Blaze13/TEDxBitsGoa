@@ -18,7 +18,7 @@ export default function SponsorsPage() {
       gradient: 'from-red-700 to-gray-900'
     },
     {
-      name: 'Skull Candy',
+      name: 'Skullcandy',
       role: 'Official Audio Partner',
       logo: '/images/sponsors/skullcandy.png',
       gradient: 'from-red-800 to-gray-900'
